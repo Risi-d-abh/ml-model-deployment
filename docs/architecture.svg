@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+  <title id="title">Iris API deployment architecture</title>
+  <desc id="desc">GitHub Actions tests and builds an image, pushes it to Amazon ECR, and deploys it to a Docker container on EC2. A client sends requests to the API.</desc>
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .aws { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; rx: 12; }
+      .flow { stroke: #475569; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      text { font-family: Arial, sans-serif; fill: #0f172a; }
+      .label { font-size: 22px; font-weight: 700; }
+      .sub { font-size: 15px; fill: #475569; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="470" fill="#ffffff"/>
+  <rect class="box" x="45" y="185" width="175" height="92"/>
+  <text class="label" x="132" y="225" text-anchor="middle">Client</text>
+  <text class="sub" x="132" y="252" text-anchor="middle">HTTP request</text>
+  <rect class="aws" x="390" y="155" width="235" height="150"/>
+  <text class="label" x="507" y="195" text-anchor="middle">Amazon EC2</text>
+  <rect class="box" x="425" y="215" width="165" height="62"/>
+  <text class="label" x="507" y="244" text-anchor="middle" font-size="18">Docker + FastAPI</text>
+  <text class="sub" x="507" y="266" text-anchor="middle">Iris model</text>
+  <rect class="box" x="415" y="35" width="185" height="84"/>
+  <text class="label" x="507" y="69" text-anchor="middle">GitHub Actions</text>
+  <text class="sub" x="507" y="96" text-anchor="middle">tests, build, deploy</text>
+  <rect class="aws" x="815" y="35" width="185" height="84"/>
+  <text class="label" x="907" y="69" text-anchor="middle">Amazon ECR</text>
+  <text class="sub" x="907" y="96" text-anchor="middle">container image</text>
+  <path class="flow" d="M220 231 H390"/>
+  <path class="flow" d="M600 77 H815"/>
+  <path class="flow" d="M907 119 V230 H625"/>
+  <path class="flow" d="M507 119 V155"/>
+  <text class="sub" x="695" y="212" text-anchor="middle">pull image</text>
+  <text class="sub" x="706" y="63" text-anchor="middle">push image</text>
+</svg>
